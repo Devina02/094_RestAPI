@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -22,6 +24,7 @@ import com.example.pam9.navigation.DestinasiNavigasi
 import com.example.pam9.ui.PenyediaViewModel
 import com.example.pam9.ui.TopAppBarKontak
 import com.example.pam9.ui.kontak.viewmodel.InsertUiEvent
+import com.example.pam9.ui.kontak.viewmodel.InsertUiState
 import com.example.pam9.ui.kontak.viewmodel.InsertViewModel
 import kotlinx.coroutines.launch
 
@@ -114,5 +117,30 @@ fun FormInputSiswa(
             thickness = 8.dp,
             modifier = Modifier.padding(12.dp)
         )
+    }
+}
+@Composable
+fun EntryKontakBody(
+    insertUiState: InsertUiState,
+    onSiswaValueChange: (InsertUiEvent) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
+    Column(
+        verticalArrangement = Arrangement.spacedBy(18.dp),
+        modifier = modifier.padding(12.dp)
+    ) {
+        FormInputSiswa(
+            insertUiEvent = insertUiState.insertUiEvent,
+            onValueChange = onSiswaValueChange,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Button(
+            onClick = onSaveClick,
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Simpan")
+        }
     }
 }
