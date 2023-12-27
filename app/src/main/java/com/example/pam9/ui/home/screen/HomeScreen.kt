@@ -78,6 +78,20 @@ fun HomeScreen(
                 )
             }
         },
+    ) { innerPadding ->
+        HomeStatus(
+            kontakUIState = viewModel.kontakUIState ,
+            retryAction = {
+                viewModel.getKontak()
+            },
+            modifier = Modifier.padding(innerPadding),
+            onDetailClick = onDetailClick,
+            onDeleteClick = {
+                viewModel.deleteKontak(it.id)
+                viewModel.getKontak()
+            }
+        )
+    }
 }
 
 @Composable
