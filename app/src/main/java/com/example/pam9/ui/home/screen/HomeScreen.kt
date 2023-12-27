@@ -76,6 +76,7 @@ fun KontakCard(
         ){
             Row (
                 modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
             ){
                 Text(
                     text = kontak.nama,
@@ -92,7 +93,8 @@ fun KontakCard(
             }
             Text(
                 text = kontak.telpon,
-                style = MaterialTheme.typography.titleMedium)
+                style = MaterialTheme.typography.titleMedium
+            )
         }
     }
 
