@@ -29,7 +29,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pam9.R
 import com.example.pam9.model.Kontak
+import com.example.pam9.navigation.DestinasiNavigasi
 import com.example.pam9.ui.home.viewmodel.KontakUIState
+
+
+object DestinasiHome : DestinasiNavigasi {
+    override val route = "home"
+    override val titleRes = "kontak"
+}
+
 
 @Composable
 fun HomeStatus(
@@ -38,7 +46,6 @@ fun HomeStatus(
     modifier: Modifier = Modifier,
     OnDeleteClick: (Kontak) -> Unit = {},
     onDetailClick: (Int) -> Unit
-
 ){
     when (kontakUIState){
         is KontakUIState.Loading -> OnLoading (modifier = modifier.fillMaxSize())
