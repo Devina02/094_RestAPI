@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -27,9 +28,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pam9.R
 import com.example.pam9.model.Kontak
 import com.example.pam9.navigation.DestinasiNavigasi
+import com.example.pam9.ui.PenyediaViewModel
+import com.example.pam9.ui.home.viewmodel.HomeViewModel
 import com.example.pam9.ui.home.viewmodel.KontakUIState
 
 
@@ -37,7 +41,16 @@ object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = "kontak"
 }
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){
 
+}
 
 @Composable
 fun HomeStatus(
