@@ -36,8 +36,9 @@ fun HomeStatus(
     kontakUIState: KontakUIState,
     retryAction: () -> Unit,
     modifier: Modifier = Modifier,
-    onDetailClick: (Kontak) -> Unit,
-    OnDeleteClick: (Kontak) -> Unit = {}
+    OnDeleteClick: (Kontak) -> Unit = {},
+    onDetailClick: (Int) -> Unit
+
 ){
     when (kontakUIState){
         is KontakUIState.Loading -> OnLoading (modifier = modifier.fillMaxSize())
