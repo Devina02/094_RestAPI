@@ -32,7 +32,7 @@ import com.example.pam9.model.Kontak
 import com.example.pam9.ui.home.viewmodel.KontakUIState
 
 @Composable
-fun HomeScreen(
+fun HomeStatus(
     kontakUIState: KontakUIState, retryAction: () -> Unit, modifier: Modifier = Modifier
 ){
     when (kontakUIState){
