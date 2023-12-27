@@ -45,7 +45,12 @@ fun HomeScreen(
 }
 
 @Composable
-fun KontakLayout(kontak: List<Kontak>,  modifier: Modifier = Modifier) {
+fun KontakLayout(
+    kontak: List<Kontak>,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Kontak) -> Unit,
+    OnDeleteClick: (Kontak) -> Unit = {}
+) {
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
