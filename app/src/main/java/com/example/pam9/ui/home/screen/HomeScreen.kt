@@ -33,7 +33,11 @@ import com.example.pam9.ui.home.viewmodel.KontakUIState
 
 @Composable
 fun HomeStatus(
-    kontakUIState: KontakUIState, retryAction: () -> Unit, modifier: Modifier = Modifier
+    kontakUIState: KontakUIState,
+    retryAction: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Kontak) -> Unit,
+    OnDeleteClick: (Kontak) -> Unit = {}
 ){
     when (kontakUIState){
         is KontakUIState.Loading -> OnLoading (modifier = modifier.fillMaxSize())
