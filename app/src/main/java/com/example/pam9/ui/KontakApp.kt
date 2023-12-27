@@ -8,19 +8,16 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.pam9.R
+import com.example.pam9.navigation.PengelolaHalaman
 import com.example.pam9.ui.home.screen.HomeScreen
 import com.example.pam9.ui.home.viewmodel.HomeViewModel
 
@@ -39,19 +36,18 @@ fun KontakApp(
                 .fillMaxSize()
                 .padding(it)
         ){
-            HomeScreen(kontakUIState = homeViewModel.kontakUIState, retryAction = homeViewModel::getKontak)
+            PengelolaHalaman()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarKontak(
-    title: String,
-    canNavigateBack: Boolean,
-    modifier: Modifier = Modifier,
-    scrollBehavior: TopAppBarScrollBehavior? = null,
-    navigateUp: () -> Unit = {}
+fun TopAppBarKontak(title: String,
+                    canNavigateBack: Boolean,
+                    modifier: Modifier = Modifier,
+                    scrollBehavior: TopAppBarScrollBehavior? = null,
+                    navigateUp: () -> Unit = {}
 ) {
     CenterAlignedTopAppBar (title = { Text(title) } ,
         modifier = modifier,
@@ -62,9 +58,9 @@ fun TopAppBarKontak(
                     Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "")
                 }
 
-                }
             }
         }
+    }
 
 
 
