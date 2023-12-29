@@ -46,8 +46,8 @@ fun EntryKontakScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBarKontak(
-                title = DestinasiEntry.titleRes ,
-                canNavigasiBack = true,
+                title = DestinasiEntry.titleRes,
+                canNavigateBack = true,
                 scrollBehavior = scrollBehavior,
                 navigateUp = navigateBack
             )
